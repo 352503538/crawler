@@ -26,14 +26,15 @@ jobs:
 
       # Download and cache dependencies
       - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "build.gradle" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
 
-      - run: gradle dependencies
-
-      - save_cache:
+          key: hcsp-{{ checksum "pom.xml" }}
+      - run:
+          name: Verify whitelist
+          command: ./.circleci/verifyWhitelist.sh
+      - run:
+          name: Run Maven verify
+          command: mvn clean verify
+      - save_cache: # saves the project dependencies
           paths:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
