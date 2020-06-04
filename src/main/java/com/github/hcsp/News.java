@@ -14,6 +14,7 @@ public class News {
     public News(){
     }
 
+
     public News(String url, String content, String title) {
         this.url = url;
         this.content = content;
