@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.352503538</groupId>
-    <artifactId>xiedaimala-craswler</artifactId>
+    <artifactId>crawler</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
